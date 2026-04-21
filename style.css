@@ -1,0 +1,191 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+body {
+    padding: 40px;
+    min-height: 100vh;
+}
+
+/* 背景图层：bg0~bg3背景切换 */
+.bg-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-image: url("img/bg0.png");
+    transition: background-image 0.5s ease;
+}
+
+/* 播放器整体容器 */
+.player-box {
+    width: 520px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 顶部标题+学号姓名 */
+.player-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.player-title h1 {
+    font-size: 26px;
+    color: #222;
+    margin-bottom: 8px;
+}
+.player-title p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* 模式按钮+MV按钮组 */
+.mode-btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.mode-btn {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.mode-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 媒体画面展示容器：视频+封面共用区域 */
+.media-view-box {
+    width: 100%;
+    height: 280px;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* 视频播放器样式：播放MP4时完整显示画面 */
+.video-display {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+/* MP3歌曲封面图：对应record0~record3，播放音频时显示 */
+.cover-img {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* 播放资源名称 */
+.media-name {
+    text-align: center;
+    margin: 15px 0;
+}
+.media-name h2 {
+    font-size: 22px;
+    color: #333;
+    font-weight: normal;
+}
+
+/* 进度条区域 */
+.progress-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+.progress-area span {
+    font-size: 14px;
+    color: #666;
+    width: 50px;
+    text-align: center;
+}
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.progress-run {
+    height: 100%;
+    background-color: #36d399;
+    border-radius: 4px;
+    width: 0%;
+}
+
+/* 全套控制按钮样式（全部你的原图按钮） */
+.control-btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+.control-img {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.play-img {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.control-img:hover, .play-img:hover {
+    transform: scale(1.1);
+}
+
+/* 播放列表区域 */
+.playlist-box {
+    max-height: 320px;
+    overflow-y: auto;
+}
+.playlist-box h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 12px;
+}
+#mediaList {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+#mediaList li {
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+#mediaList li:hover {
+    color: #36d399;
+}
+/* 当前播放项高亮 */
+#mediaList li.active {
+    color: #36d399;
+    font-weight: 600;
+}

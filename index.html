@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姜璟媛 24215220201 音乐视频播放器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 背景层：bg0~bg3背景图切换 -->
+    <div class="bg-box" id="bgBox"></div>
+
+    <div class="player-box">
+        <!-- 顶部个人信息 -->
+        <div class="player-title">
+            <h1>网页音乐视频播放器</h1>
+            <p>姓名：姜璟媛 &nbsp;&nbsp; 学号：24215220201</p>
+        </div>
+
+        <!-- 模式切换按钮 + MV按钮区域（全部调用你的原图） -->
+        <div class="mode-btn-group">
+            <img src="img/mode1.png" alt="模式1" class="mode-btn" id="mode1">
+            <img src="img/mode2.png" alt="模式2" class="mode-btn" id="mode2">
+            <img src="img/mode3.png" alt="模式3" class="mode-btn" id="mode3">
+            <img src="img/MV.png" alt="MV视频模式" class="mode-btn" id="mvBtn">
+        </div>
+
+        <!-- 媒体播放区域：视频画面 + 歌曲封面展示区 -->
+        <div class="media-view-box">
+            <!-- MP4视频播放器：播放视频画面 -->
+            <video id="videoPlayer" class="video-display"></video>
+            <!-- MP3音频封面展示：对应record0~record3封面图 -->
+            <img src="img/record0.jpg" alt="歌曲封面" class="cover-img" id="coverImg">
+            <!-- MP3音频播放器（仅声音） -->
+            <audio id="audioPlayer">
+        </div>
+
+        <!-- 当前播放资源名称 -->
+        <div class="media-name">
+            <h2 id="mediaTitle">等待播放</h2>
+        </div>
+
+        <!-- 进度条 + 时间显示区域 -->
+        <div class="progress-area">
+            <span id="currentTime">00:00</span>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-run" id="progress"></div>
+            </div>
+            <span id="totalTime">00:00</span>
+        </div>
+
+        <!-- 全套控制按钮（100%全部使用你img里的原图按钮） -->
+        <div class="control-btn-group">
+            <img src="img/上一首.png" alt="上一曲" class="control-img" id="prevBtn">
+            <img src="img/继续播放.png" alt="播放" class="play-img" id="playBtn">
+            <img src="img/下一首.png" alt="下一曲" class="control-img" id="nextBtn">
+            <img src="img/音量.png" alt="音量" class="control-img" id="volumeBtn">
+            <img src="img/静音.png" alt="静音" class="control-img" id="muteBtn">
+            <img src="img/列表.png" alt="播放列表" class="control-img" id="listBtn">
+        </div>
+
+        <!-- 完整播放列表 4MP3+4MP4 -->
+        <div class="playlist-box" id="playlistBox">
+            <h3>播放列表（4首MP3 + 4个MP4）</h3>
+            <ul id="mediaList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
